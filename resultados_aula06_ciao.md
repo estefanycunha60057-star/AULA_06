@@ -40,6 +40,15 @@ Matriz final de feromônio:
 
 <img width="457" height="502" alt="image" src="https://github.com/user-attachments/assets/f68d368a-451a-4c28-9a30-e32dab85a572" />
 
+1. Por que o ACO utiliza várias formigas em vez de apenas uma formiga procurando a melhor rota? Explique qual é a importância de explorar diferentes caminhos.
+R: Várias formigas: permitem explorar diferentes caminhos e aumentam as chances de encontrar uma boa solução.
+
+2. Por que uma rota de menor custo recebe mais feromônio? Explique como essa regra influencia o comportamento das próximas formigas.
+R:Mais feromônio nas melhores rotas: rotas de menor custo são melhores, então recebem mais feromônio e ficam mais atrativas.
+
+3. O que poderia acontecer se não existisse evaporação do feromônio? Explique por que manter para sempre as primeiras informações encontradas poderia prejudicar a busca por soluções melhores.
+R:Sem evaporação: o algoritmo poderia ficar preso em caminhos antigos e deixar de explorar soluções melhores.
+
 ----------------   -----------------  ----------------
 
 Resultado LAB 02:
@@ -151,6 +160,18 @@ Melhor rota: [0, 1, 2, 3, 4, 5]
 Melhor custo: 8.0
 <img width="348" height="200" alt="image" src="https://github.com/user-attachments/assets/b155e545-e592-4c24-9aab-e6f7d9f9a0b4" />
 
+1. Quando aumentamos o ALPHA, a influência da experiência acumulada pelas formigas aumenta ou diminui?
+R: Aumenta, pois o feromônio passa a ter maior influência na escolha dos caminhos.
+
+2. O que acontece quando o BETA é aumentado?
+R: Caminhos de menor custo ficam mais atrativos.
+
+3. O que acontece quando a evaporação aumenta?
+R: O algoritmo esquece as experiências antigas mais rapidamente e explora mais novas possibilidades.
+
+4. O que acontece quando aumentamos o número de formigas?
+R: Mais caminhos são explorados, aumentando a diversidade da busca.
+
 ----------------   -----------------  ----------------
 
 Resultado LAB 03:
@@ -173,5 +194,47 @@ Matriz final de feromônio:
  [0.00000000e+00 0.00000000e+00 0.00000000e+00 8.88178420e-16
   8.88178420e-16 8.88178420e-16]]
 
+1. Por que a fórmula da atratividade utiliza 1 / custo em vez de utilizar diretamente o custo?
+R: Para que caminhos de menor custo tenham maior atratividade.
 
-  
+2. O que acontece com a atratividade quando uma rota recebe mais feromônio?
+R: A atratividade aumenta e o caminho tem maior chance de ser escolhido.
+
+3. Por que a função construir_rota() precisa impedir que a formiga visite novamente um nó que já está na rota?
+R: Para evitar ciclos e permitir a construção de uma rota válida.
+
+  ----------------   -----------------  ----------------
+
+Resultado LAB 04:
+
+  ========== RESULTADO ==========
+
+Melhor rota encontrada:
+[0, 1, 2, 3, 4, 5]
+
+Melhor custo:
+8.0
+
+Matriz final de feromônio:
+[[8.88178420e-16 5.00000000e+02 2.02125008e-12 0.00000000e+00
+  0.00000000e+00 0.00000000e+00]
+ [8.88178420e-16 8.88178420e-16 5.00000000e+02 7.99458180e-14
+  0.00000000e+00 0.00000000e+00]
+ [8.88178420e-16 6.72575548e-14 8.88178420e-16 5.00000000e+02
+  3.77577463e-12 0.00000000e+00]
+ [0.00000000e+00 8.88178420e-16 1.35764416e-14 8.88178420e-16
+  5.00000000e+02 4.28187868e-13]
+ [0.00000000e+00 0.00000000e+00 8.88178420e-16 3.23862149e-13
+  8.88178420e-16 5.00000000e+02]
+ [0.00000000e+00 0.00000000e+00 0.00000000e+00 8.88178420e-16
+  8.88178420e-16 8.88178420e-16]]
+<img width="427" height="239" alt="image" src="https://github.com/user-attachments/assets/b4a07d78-fe6c-4e50-a8af-1ea788011041" />
+
+1. Explique como o feromônio ajuda o ACO a aprender quais caminhos são melhores.
+R: O feromônio funciona como uma memória coletiva, reforçando os caminhos de boas soluções.
+
+2. Qual é a diferença entre explorar novos caminhos e aproveitar caminhos que já demonstraram ser bons?
+R: Explorar é testar caminhos novos; aproveitar é utilizar caminhos que já apresentaram bons resultados.
+
+3. Se você precisasse melhorar o desempenho desse ACO para uma rede muito maior, qual parâmetro ou parte do algoritmo investigaria primeiro?
+R: Eu investigaria o número de formigas, o número de iterações e os parâmetros ALPHA e BETA para equilibrar exploração e aproveitamento.
